@@ -413,7 +413,7 @@ master, this is also an option.
 Create a file named `.github/workflows/black.yml` inside your repository with:
 
 ```yaml
-name: Black
+name: Lint
 
 on: [push, pull_request]
 
