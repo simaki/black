@@ -413,7 +413,7 @@ master, this is also an option.
 Create a file named `.github/workflows/black.yml` inside your repository with:
 
 ```yaml
-name: Lint
+name: Black
 
 on: [push, pull_request]
 
@@ -424,15 +424,16 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: psf/black@stable
-        with:
-          args: ". --check"
 ```
 
-### Inputs
+You may use `options` (Default is `'--check'`) and `src` (Default is `'.'`) as follows:
 
-#### `black_args`
-
-**optional**: Black input arguments. Defaults to `. --check --diff`.
+```yaml
+      - uses: psf/black@stable
+        with:
+            options: '--check --verbose'
+            src: './src'
+```
 
 ## Ignoring unmodified files
 
